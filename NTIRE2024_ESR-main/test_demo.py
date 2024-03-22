@@ -27,6 +27,12 @@ def select_model(args, device):
         model_path = os.path.join('model_zoo', 'team00_rlfn.pth')
         model = RLFN_Prune()
         model.load_state_dict(torch.load(model_path), strict=True)
+    elif model_id == 25:
+        from models.team25_EERN import EERN
+        name, data_range = f"{model_id:02}_EERN_baseline", 255.0
+        model_path = os.path.join('model_zoo', 'team25_EERN.pt')
+        model = EERN()
+        model.load_state_dict(torch.load(model_path), strict=True)
 
     # elif model_id == 1:
     #     from models.team[Your_Team_ID]_[Model_Name] import [Model_Name]
