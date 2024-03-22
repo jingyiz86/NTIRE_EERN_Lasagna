@@ -80,8 +80,8 @@ class EERN(nn.Module):
         
         #########################
         fea = self.finetune(fea)
-        noise = torch.randn_like(fea) * 8e-3
-        fea = fea + noise
+        # noise = torch.randn_like(fea) * 8e-3
+        # fea = fea + noise
         # fea = self.relu(fea)
         ######################
         out = fea + out
